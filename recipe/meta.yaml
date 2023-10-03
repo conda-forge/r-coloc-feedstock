@@ -1,4 +1,4 @@
-{% set version = '5.2.2' %}
+{% set version = "5.2.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/coloc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/coloc/coloc_{{ version }}.tar.gz
-  sha256: 4a304e941c2afef1e9bc456b115ca2283ded75ab374ecc30f58dfaeb62f1a80c
+  sha256: 259dbd9613d809aa60ad148f6e187249642510f0dbbd15a50b25588d9a426150
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -45,8 +45,7 @@ test:
 about:
   home: https://github.com/chr1swallace/coloc
   license: GPL-2.0-or-later
-  summary: Performs the colocalisation tests described in Giambartolomei et al (2013) <doi:10.1371/journal.pgen.1004383>,
-    Wallace (2020) <doi:10.1371/journal.pgen.1008720>, Wallace (2021) <doi:10.1371/journal.pgen.1009440>.
+  summary: Performs the colocalisation tests described in Giambartolomei et al (2013) <doi:10.1371/journal.pgen.1004383>, Wallace (2020) <doi:10.1371/journal.pgen.1008720>, Wallace (2021) <doi:10.1371/journal.pgen.1009440>.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
